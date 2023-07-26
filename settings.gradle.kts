@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AdcioAnalytics"
 include(":app")
+include(":analytics")

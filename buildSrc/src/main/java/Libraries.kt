@@ -43,6 +43,11 @@ object Libraries {
         add(composeUiTestJunit4)
     }
 
+    val analyticsTestLibraries = arrayListOf<String>().apply {
+        add(extJunit)
+        add(espressoCore)
+    }
+
     val debugLibraries = arrayListOf<String>().apply {
         add(composeUiTooling)
         add(composeUiTestManifest)

@@ -2,6 +2,7 @@ import org.gradle.api.JavaVersion
 
 object AppConfig {
     const val appNamespace = "ai.minjae.adcio_analytics"
+    const val analyticsNamespace = "ai.minjae.analytics"
     const val compileSdk = 33
     const val applicationId = "ai.minjae.adcio_analytics"
     const val minSdk = 24
