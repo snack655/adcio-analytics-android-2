@@ -35,6 +35,8 @@ android {
 dependencies {
 
     implementation(Libraries.androidLibraries)
+    implementation(Libraries.coroutineLibraries)
+    implementation(Libraries.networkLibraries)
 
     testImplementation(Libraries.junit)
     androidTestImplementation(Libraries.analyticsTestLibraries)

@@ -17,8 +17,8 @@ object AppConfig {
     const val defaultProguardFile = "proguard-android-optimize.txt"
     const val proguardConsumerRules =  "consumer-rules.pro"
 
-    @JvmField val javaVersion = JavaVersion.VERSION_1_8
-    const val jvmTarget = "1.8"
+    @JvmField val javaVersion = JavaVersion.VERSION_17
+    const val jvmTarget = "17"
     const val compose = true
     const val kotlinCompilerExtensionVersion = "1.4.3"
     const val packagingOption = "/META-INF/{AL2.0,LGPL2.1}"

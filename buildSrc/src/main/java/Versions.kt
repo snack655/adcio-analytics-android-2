@@ -3,6 +3,13 @@ object Versions {
     const val coreKtx = "1.10.1"
     const val lifecycleRunTimeKtx = "2.6.1"
 
+    const val coroutine = "1.6.0"
+
+    // remote
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.9.0"
+    const val gson = "2.10.1"
+
     // compose
     const val compose = "1.7.2"
     const val composeBom = "2023.03.00"

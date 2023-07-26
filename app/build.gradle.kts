@@ -55,6 +55,8 @@ dependencies {
     implementation(Libraries.androidLibraries)
     implementation(Libraries.composeLibraries)
     implementation(platform(Libraries.composeBom))
+    implementation(Libraries.coroutineLibraries)
+    implementation(Libraries.networkLibraries)
 
     testImplementation(Libraries.junit)
     androidTestImplementation(Libraries.testLibraries)

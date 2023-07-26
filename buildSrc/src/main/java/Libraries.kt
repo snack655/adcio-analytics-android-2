@@ -14,6 +14,16 @@ object Libraries {
     private val composeMaterial3 = "androidx.compose.material3:material3"
     val composeBom = "androidx.compose:compose-bom:${Versions.composeBom}"
 
+    // network
+    private val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    private val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    private val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
+    private val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
+
+    // coroutine
+    private val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutine}"
+    private val coroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}"
+
     // test
     val junit = "junit:junit:${Versions.junit}"
     private val extJunit = "androidx.test.ext:junit:${Versions.extJunit}"
@@ -35,6 +45,18 @@ object Libraries {
         add(composeUiGraphics)
         add(composeUiToolingPreview)
         add(composeMaterial3)
+    }
+
+    val coroutineLibraries = arrayListOf<String>().apply {
+        add(coroutineCore)
+        add(coroutineAndroid)
+    }
+
+    val networkLibraries = arrayListOf<String>().apply {
+        add(retrofit)
+        add(gsonConverter)
+        add(okhttp)
+        add(loggingInterceptor)
     }
 
     val testLibraries = arrayListOf<String>().apply {
