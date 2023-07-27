@@ -1,5 +1,9 @@
 package ai.minjae.analytics.util
 
 object Constants {
-    const val BASE_URL = "https://receiver-dev.adcio.ai/api/"
+    var baseUrl = "https://receiver-dev.adcio.ai/api/"
+
+    fun changeBaseUrl(url: String) {
+        baseUrl = url
+    }
 }
