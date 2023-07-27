@@ -22,4 +22,5 @@ object Versions {
     // plugins
     const val android = "8.1.0"
     const val kotlinAndroid = "1.8.10"
+    const val KTLINT = "10.2.0"
 }
