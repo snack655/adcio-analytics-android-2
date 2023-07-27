@@ -21,7 +21,7 @@ object RetrofitClient {
         .build()
 
 
-    val adcioAnalyticsRetrofit = Retrofit.Builder()
+    val analyticsService = Retrofit.Builder()
         .baseUrl(Constants.BASE_URL)
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
