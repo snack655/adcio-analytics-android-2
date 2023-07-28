@@ -2,5 +2,5 @@
 plugins {
     id(Plugins.application) version Versions.android apply false
     id(Plugins.kotlinAndroid) version Versions.kotlinAndroid apply false
-    id("org.jetbrains.kotlin.jvm") version "1.8.10" apply false
+    id(Plugins.kotlinJvm) version Versions.kotlinAndroid apply false
 }

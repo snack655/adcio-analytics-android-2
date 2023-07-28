@@ -63,4 +63,6 @@ dependencies {
     androidTestImplementation(Libraries.testLibraries)
     androidTestImplementation(platform(Libraries.composeBom))
     debugImplementation(Libraries.debugLibraries)
+
+    implementation(project(AppConfig.pathOfAnalytics))
 }

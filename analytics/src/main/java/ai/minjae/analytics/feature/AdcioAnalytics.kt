@@ -5,6 +5,7 @@ import ai.minjae.analytics.model.LogOption
 import ai.minjae.analytics.repository.AnalyticsRepository
 import ai.minjae.analytics.util.Constants
 import android.os.Build
+import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 
@@ -24,7 +25,8 @@ class AdcioAnalytics {
         analyticsRepository: AnalyticsRepository = RepositoryModule.provideAnalyticsRepository(),
         baseUrl: String
     ): this(analyticsRepository) {
-        Constants.changeBaseUrl(baseUrl)
+        Constants.baseUrl = baseUrl
+        Log.d("ObjectTest", "AdcioAnalytics 생성됨. ${Constants.baseUrl}")
     }
 
     fun impressionLogEvent(

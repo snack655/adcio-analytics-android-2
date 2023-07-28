@@ -2,6 +2,7 @@ package ai.minjae.analytics.network.retrofit
 
 import ai.minjae.analytics.network.service.AnalyticsService
 import ai.minjae.analytics.util.Constants
+import android.util.Log
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -9,7 +10,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object RetrofitClient {
+class RetrofitClient {
+    init {
+        Log.d("ObjectTest", "RetrofitClient 생성됨.")
+    }
 
     private val okHttpClient = OkHttpClient().newBuilder()
         .connectTimeout(60, TimeUnit.SECONDS)
@@ -20,9 +24,8 @@ object RetrofitClient {
         })
         .build()
 
-
-    val analyticsService = Retrofit.Builder()
-        .baseUrl(Constants.BASE_URL)
+    val analyticsService: AnalyticsService = Retrofit.Builder()
+        .baseUrl(Constants.baseUrl)
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
         .build()
