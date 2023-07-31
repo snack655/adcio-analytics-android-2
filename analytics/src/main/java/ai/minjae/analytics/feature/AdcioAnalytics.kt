@@ -13,7 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import java.lang.Exception
 
-private const val DEFAULT_BASE_URL = "https://receiver-dev.adcio.ai/api/"
+private const val DEFAULT_BASE_URL = "https://receiver-dev.adcio.ai/"
 private const val BASE_URL_KEY = "ai.minjae.analytics.BASE_URL"
 
 object AdcioAnalytics {
@@ -39,6 +39,7 @@ object AdcioAnalytics {
             val bundle = applicationInfo.metaData
             // bundle 객체가 비었다면 Env 세팅이 되어있지 않은 것.
             if (bundle != null)
+
                 changeBaseUrl(bundle.getString(BASE_URL_KEY))
             else throw EmptyEnvFileException()
 

@@ -4,6 +4,7 @@ import ai.minjae.adcio_analytics.ui.theme.AdcioAnalyticsTheme
 import ai.minjae.analytics.feature.AdcioAnalytics
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -17,6 +18,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -25,11 +30,15 @@ import androidx.compose.ui.unit.sp
 import java.lang.Exception
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AdcioAnalytics.init(this)
 
         setContent {
+            var sessionId by remember {
+                mutableStateOf("SessionId")
+            }
 
             AdcioAnalyticsTheme {
                 Column(
@@ -85,6 +94,11 @@ class MainActivity : ComponentActivity() {
                             price = 1230,
                             fromAgent = true,
                         )
+                    }
+                    Spacer(modifier = Modifier.height(20.dp))
+                    PlayItem(title = "SessionId", desc = "You can see my [$sessionId]", text = "get SessionId") {
+                        sessionId = AdcioAnalytics.getSessionId()
+                        Toast.makeText(this@MainActivity, sessionId, Toast.LENGTH_SHORT).show()
                     }
                 }
             }
