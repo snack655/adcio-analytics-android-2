@@ -2,7 +2,6 @@ package ai.minjae.analytics.network.retrofit
 
 import ai.minjae.analytics.network.service.AnalyticsService
 import ai.minjae.analytics.util.Constants
-import android.util.Log
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
