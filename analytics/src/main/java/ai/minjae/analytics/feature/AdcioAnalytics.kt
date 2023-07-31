@@ -26,7 +26,6 @@ class AdcioAnalytics {
         baseUrl: String
     ): this(analyticsRepository) {
         Constants.baseUrl = baseUrl
-        Log.d("ObjectTest", "AdcioAnalytics 생성됨. ${Constants.baseUrl}")
     }
 
     fun impressionLogEvent(

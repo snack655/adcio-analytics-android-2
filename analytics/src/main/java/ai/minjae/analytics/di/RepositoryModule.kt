@@ -13,6 +13,7 @@ object RepositoryModule {
     }
 
     /*
+    // 만약 테스트를 한다면.
     fun provideTestAnalyticsRepository(): AnalyticsRepository {
         analyticsRepository = TestAnalyticsRepositoryImpl()
         return analyticsRepository
