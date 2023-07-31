@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Please write down the BaseUrl you want!
+    (If you don't want to share environment variables, please treat them as .gitignore.)
+-->
+<resources>
+    <string name="YOUR_BASE_URL">https://receiver-dev.adcio.ai/test/</string>
+</resources>

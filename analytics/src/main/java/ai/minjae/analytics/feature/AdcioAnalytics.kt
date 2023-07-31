@@ -139,5 +139,6 @@ object AdcioAnalytics {
 
     private fun changeBaseUrl(baseUrl: String?) {
         if (baseUrl.isNullOrBlank()) Constants.baseUrl = DEFAULT_BASE_URL
+        else Constants.baseUrl = baseUrl
     }
 }

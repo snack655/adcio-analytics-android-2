@@ -3,6 +3,7 @@ package ai.minjae.adcio_analytics
 import ai.minjae.adcio_analytics.ui.theme.AdcioAnalyticsTheme
 import ai.minjae.analytics.feature.AdcioAnalytics
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,14 +23,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
-private lateinit var adcioAnalytics: AdcioAnalytics
+import java.lang.Exception
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        adcioAnalytics = AdcioAnalytics(baseUrl = "https://receiver-dev.adcio.ai")
+        AdcioAnalytics.init(this)
 
         setContent {
 
@@ -50,19 +49,23 @@ class MainActivity : ComponentActivity() {
                     }
                     Spacer(modifier = Modifier.height(20.dp))
                     PlayItem(title = "Impression", desc = "Log event for impression", text = "send impression log") {
-                        adcioAnalytics.impressionLogEvent(
-                            requestId = "requestId",
-                            cost = 1230,
-                            memberId = "memberId",
-                            campaignId = "campaignId",
-                            productId = "productId",
-                            price = 1230,
-                            fromAgent = true,
-                        )
+                        try {
+                            AdcioAnalytics.impressionLogEvent(
+                                requestId = "requestId",
+                                cost = 1230,
+                                memberId = "memberId",
+                                campaignId = "campaignId",
+                                productId = "productId",
+                                price = 1230,
+                                fromAgent = true,
+                            )
+                        } catch (e: Exception) {
+                            Log.e("AnalyticsTest", e.stackTraceToString())
+                        }
                     }
                     Spacer(modifier = Modifier.height(20.dp))
                     PlayItem(title = "Click", desc = "Log event for click", text = "send click log") {
-                        adcioAnalytics.clickLogEvent(
+                        AdcioAnalytics.clickLogEvent(
                             requestId = "requestId",
                             cost = 1230,
                             memberId = "memberId",
@@ -74,7 +77,7 @@ class MainActivity : ComponentActivity() {
                     }
                     Spacer(modifier = Modifier.height(20.dp))
                     PlayItem(title = "Purchase", desc = "Log event for purchase", text = "send purchase log") {
-                        adcioAnalytics.purchaseLogEvent(
+                        AdcioAnalytics.purchaseLogEvent(
                             requestId = "requestId",
                             cost = 1230,
                             memberId = "memberId",

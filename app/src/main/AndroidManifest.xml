@@ -25,6 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <meta-data
+            android:name="ai.minjae.analytics.BASE_URL"
+            android:value="@string/YOUR_BASE_URL" />
+
+    </application>
 </manifest>
