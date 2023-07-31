@@ -4,7 +4,6 @@ import ai.minjae.adcio_analytics.ui.theme.AdcioAnalyticsTheme
 import ai.minjae.analytics.feature.AdcioAnalytics
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
