@@ -9,8 +9,6 @@ import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 
-private const val SUCCESS_LOG_EVENT_MESSAGE = "로깅에 성공했습니다."
-
 class AdcioAnalytics {
 
     private var analyticsRepository: AnalyticsRepository
@@ -36,8 +34,7 @@ class AdcioAnalytics {
         productId: String,
         price: Int,
         fromAgent: Boolean,
-    ): String {
-        var message = ""
+    ) {
         runBlocking(Dispatchers.IO) {
             analyticsRepository.impressionLogEvent(
                 LogOption(
@@ -50,14 +47,10 @@ class AdcioAnalytics {
                     price = price,
                     fromAgent = fromAgent,
                 )
-            ).onSuccess {
-                if (it.success == true)
-                    message = SUCCESS_LOG_EVENT_MESSAGE
-            }.onFailure {
+            ).onFailure {
                 throw it
             }
         }
-        return message
     }
 
     fun clickLogEvent(
@@ -68,8 +61,7 @@ class AdcioAnalytics {
         productId: String,
         price: Int,
         fromAgent: Boolean,
-    ): String {
-        var message = ""
+    ) {
         runBlocking(Dispatchers.IO) {
             analyticsRepository.clickLogEvent(
                 LogOption(
@@ -82,14 +74,10 @@ class AdcioAnalytics {
                     price = price,
                     fromAgent = fromAgent,
                 )
-            ).onSuccess {
-                if (it.success == true)
-                    message = SUCCESS_LOG_EVENT_MESSAGE
-            }.onFailure {
+            ).onFailure {
                 throw it
             }
         }
-        return message
     }
 
     fun purchaseLogEvent(
@@ -100,8 +88,7 @@ class AdcioAnalytics {
         productId: String,
         price: Int,
         fromAgent: Boolean,
-    ): String {
-        var message = ""
+    ) {
         runBlocking(Dispatchers.IO) {
             analyticsRepository.purchaseLogEvent(
                 LogOption(
@@ -114,13 +101,9 @@ class AdcioAnalytics {
                     price = price,
                     fromAgent = fromAgent,
                 )
-            ).onSuccess {
-                if (it.success == true)
-                    message = SUCCESS_LOG_EVENT_MESSAGE
-            }.onFailure {
+            ).onFailure {
                 throw it
             }
         }
-        return message
     }
 }

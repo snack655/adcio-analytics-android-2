@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
                     }
                     Spacer(modifier = Modifier.height(20.dp))
                     PlayItem(title = "Impression", desc = "Log event for impression", text = "send impression log") {
-                        val message = adcioAnalytics.impressionLogEvent(
+                        adcioAnalytics.impressionLogEvent(
                             requestId = "requestId",
                             cost = 1230,
                             memberId = "memberId",
@@ -59,11 +59,10 @@ class MainActivity : ComponentActivity() {
                             price = 1230,
                             fromAgent = true,
                         )
-                        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
                     }
                     Spacer(modifier = Modifier.height(20.dp))
                     PlayItem(title = "Click", desc = "Log event for click", text = "send click log") {
-                        val message = adcioAnalytics.clickLogEvent(
+                        adcioAnalytics.clickLogEvent(
                             requestId = "requestId",
                             cost = 1230,
                             memberId = "memberId",
@@ -72,11 +71,10 @@ class MainActivity : ComponentActivity() {
                             price = 1230,
                             fromAgent = true,
                         )
-                        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
                     }
                     Spacer(modifier = Modifier.height(20.dp))
                     PlayItem(title = "Purchase", desc = "Log event for purchase", text = "send purchase log") {
-                        val message = adcioAnalytics.purchaseLogEvent(
+                        adcioAnalytics.purchaseLogEvent(
                             requestId = "requestId",
                             cost = 1230,
                             memberId = "memberId",
@@ -85,7 +83,6 @@ class MainActivity : ComponentActivity() {
                             price = 1230,
                             fromAgent = true,
                         )
-                        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
                     }
                 }
             }
