@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "827455442199",
+    "project_id": "adcioanalytics",
+    "storage_bucket": "adcioanalytics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827455442199:android:360138485883350e82bb52",
+        "android_client_info": {
+          "package_name": "ai.minjae.adcio_analytics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827455442199-s5k2t901mo9pd21np1teduisgocmr4m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5GBSoL-TsRKcjD52NGHapm9ovg2YMlRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827455442199-s5k2t901mo9pd21np1teduisgocmr4m5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

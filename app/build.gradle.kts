@@ -3,6 +3,8 @@ plugins {
     id(Plugins.kotlinAndroid)
     id(Plugins.kapt)
     id(Plugins.ktlint) version Versions.KTLINT
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -58,6 +60,8 @@ dependencies {
     implementation(platform(Libraries.composeBom))
     implementation(Libraries.coroutineLibraries)
     implementation(Libraries.networkLibraries)
+    implementation("com.google.firebase:firebase-crashlytics:18.4.0")
+    implementation("com.google.firebase:firebase-analytics:21.3.0")
 
     testImplementation(Libraries.junit)
     androidTestImplementation(Libraries.testLibraries)
